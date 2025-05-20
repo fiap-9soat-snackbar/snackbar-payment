@@ -176,6 +176,13 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>com/snackbar/payment/infrastructure/config/**</exclude>
+                                <exclude>**/com/snackbar/SnackbarApplication.class</exclude>
+                                <exclude>**/com/snackbar/SecurityConfig.class</exclude>
+                            </excludes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

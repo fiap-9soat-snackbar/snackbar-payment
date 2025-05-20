@@ -1,8 +1,0 @@
-com/snackbar/payment/application/usecases/CreatePaymentMPUseCaseTest.class
-com/snackbar/payment/application/usecases/ListPaymentsUseCaseTest.class
-com/snackbar/payment/application/usecases/WebHookExecutionTest.class
-com/snackbar/payment/application/usecases/GetPaymentByExternalIdUseCaseTest.class
-com/snackbar/payment/application/usecases/GetPaymentByIdUseCaseTest.class
-com/snackbar/payment/infrastructure/controllers/PaymentControllerTest.class
-com/snackbar/payment/application/usecases/CreatePaymentUseCaseTest.class
-com/snackbar/payment/application/usecases/UpdatePaymentStatusWebhookTest.class

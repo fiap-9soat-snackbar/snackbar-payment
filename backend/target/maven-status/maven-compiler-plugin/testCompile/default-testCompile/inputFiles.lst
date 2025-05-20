@@ -1,8 +1,0 @@
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/CreatePaymentMPUseCaseTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/CreatePaymentUseCaseTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/GetPaymentByExternalIdUseCaseTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/GetPaymentByIdUseCaseTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/ListPaymentsUseCaseTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/UpdatePaymentStatusWebhookTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/application/usecases/WebHookExecutionTest.java
-/Users/is_rael/Projects/study/snackbar-payment/backend/src/test/java/com/snackbar/payment/infrastructure/controllers/PaymentControllerTest.java
