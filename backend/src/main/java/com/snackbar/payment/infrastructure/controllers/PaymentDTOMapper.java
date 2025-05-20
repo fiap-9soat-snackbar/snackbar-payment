@@ -15,7 +15,7 @@ public class PaymentDTOMapper {
     public Payment createRequestToDomain(CreatePaymentRequest request) {
         
         String myOrderId = request.orderId();
-        BigDecimal totalDue = new BigDecimal(0.0);
+        BigDecimal totalDue = request.totalDue();
         String id = null;
         String paymentStatus = null;
         String externalPaymentId = null;

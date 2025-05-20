@@ -1,5 +1,7 @@
 package com.snackbar.payment.infrastructure.controllers;
 
-public record CreatePaymentRequest (String orderId, String paymentMethod) {
+import java.math.BigDecimal;
+
+public record CreatePaymentRequest (String orderId, String paymentMethod, BigDecimal totalDue) {
     
 }
