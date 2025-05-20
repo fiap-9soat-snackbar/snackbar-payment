@@ -1,17 +1,11 @@
 package com.snackbar.payment.application.usecases;
 
-// This should be equivalent to a Spring Service definition, 
-// but without any framework dependencies. It's also called an Interactor.
-
-import com.snackbar.order.domain.model.Order;
-import com.snackbar.order.service.OrderService;
+import com.snackbar.payment.domain.entity.Order;
 import com.snackbar.payment.application.gateways.PaymentGateway;
 import com.snackbar.payment.domain.entity.Payment;
+import com.snackbar.payment.application.gateways.OrderClient; // Import Feign client
 
 import java.math.BigDecimal;
-
-/*import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
 
 public class CreatePaymentUseCase {
 
@@ -19,28 +13,30 @@ public class CreatePaymentUseCase {
     //private static final Logger logger = LoggerFactory.getLogger(CreatePaymentUseCaseImpl.class);
     
     private final PaymentGateway paymentGateway;
-    private final OrderService orderService;
 
-
-    public CreatePaymentUseCase(PaymentGateway paymentGateway, OrderService orderService) {
+    public CreatePaymentUseCase(PaymentGateway paymentGateway) {
         this.paymentGateway = paymentGateway;
-        this.orderService = orderService;
     }
 
     public Payment createPayment(Payment payment){
     //public Payment createPayment(String orderId, String paymentMethod){
-        //logger.info("Finding order: {}", orderId);
-        Order order = orderService.searchOrderId(payment.orderId());
-        //Order order = orderService.searchOrderId(orderId);
         //logger.info("Obtaining total price for order: {}", order.getTotalPrice);
-        BigDecimal totalDue = order.getTotalPrice();
+        BigDecimal totalDue = new BigDecimal("1000"); //order.getTotalPrice();
         //logger.info("Setting payment status and temporary external payment ID:");
         String id = null;
         String paymentStatus = "PENDENTE";
         String externalPaymentId = null;
-        Payment localPayment = new Payment(id, payment.orderId(), totalDue, paymentStatus, payment.paymentMethod(), externalPaymentId);
+        Payment localPayment = new Payment(
+                id,
+                payment.orderId(),
+                payment.totalDue(),
+                paymentStatus,
+                payment.paymentMethod(),
+                externalPaymentId
+        );
         //Payment localPayment = new Payment(orderId, totalDue, paymentStatus, paymentMethod, externalPaymentId);
         Payment createdPayment = paymentGateway.createPayment(localPayment);
+
         return createdPayment;
     }
 

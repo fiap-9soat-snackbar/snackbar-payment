@@ -1,4 +1,4 @@
-package com.snackbar.cooking.domain.entity;
+package com.snackbar.payment.domain.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.snackbar.cooking.domain.entity;
+package com.snackbar.payment.domain.entity;
 
 public record OrderItem(
     String name,

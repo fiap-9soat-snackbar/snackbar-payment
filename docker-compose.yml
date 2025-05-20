@@ -1,6 +1,8 @@
 services:
   app:
-    build: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     restart: always
     container_name: snackbar-app-container
     ports:
@@ -18,7 +20,8 @@ services:
       - MONGODB_OPTIONS=${MONGODB_OPTIONS}
       - JWT_SECRET=${JWT_SECRET}
       - JWT_EXPIRES=${JWT_EXPIRES}
-      
+    networks:
+      - snackbar-network
 
   mongodb:
     image: mongo:8.0.1
@@ -39,3 +42,7 @@ services:
 
 volumes:
   mongodb_data:
+
+networks:
+  snackbar-network:
+    external: true
